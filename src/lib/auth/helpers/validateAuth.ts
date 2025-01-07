@@ -1,24 +1,14 @@
 import { auth } from "$lib/auth/auth";
-import { redirect } from "@sveltejs/kit";
 
 /**
- * @description Using `auth.api` to retrieve the current session
- * @param headers - Application headers
- * @returns session => Session | null
+ * @description 
+ * Check if the user is logged in or not. Suggested is to use this helper function when
+ * it comes to route access control.
+ * 
+ * @returns 
+ * true or false
  */
-export async function sessionInvalid(headers: Headers): Promise<boolean>{
+export async function isLoggedIn(headers: Headers): Promise<boolean>{
       const session = await auth.api.getSession({headers: headers})
-      return session === null
-}
-
-/**
- * @description Check if the user has access to the product
- * @param headers - Application headers
- * @returns boolean
- */
-export async function hasProductAccess(headers: Headers): Promise<boolean>{
-      const session = await auth.api.getSession({headers: headers});
-      const userHasAccess = session?.user.hasAccess as boolean;
-
-      return userHasAccess
+      return session !== null
 }
