@@ -11,8 +11,6 @@ export async function sendEmail(from: string, to: string[], subject: string, htm
             html: html
       })
 
-      // test
-
       if (error) {
             return console.error({ error });
       }
