@@ -1,7 +1,10 @@
 import { MONGODB_URI, DATABASE_NAME } from "$env/static/private";
-import { Collection, MongoClient, type Document } from "mongodb";
+import type { User } from "$lib/types/user";
+import { Collection, MongoClient } from "mongodb";
 
 const client: MongoClient = new MongoClient(MONGODB_URI);
 const database = client.db(DATABASE_NAME)
 
-export { client, database }
+const userCollection = database.collection("user") as Collection<User>
+
+export { client, database, userCollection }

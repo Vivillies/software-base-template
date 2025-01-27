@@ -11,15 +11,14 @@
 	const data = {
 		projects: [
 			{ name: "Dashboard",    url: "/dashboard",     icon: Blocks       },
-                  { name: "Template",     url: "/template",      icon: BookTemplate },
 		],
             categorized: [
-                  { title: "Components (soon)", items: [
-                        { title: "Navigation",  url: "", icon: Map,           disabled: true },
-                        { title: "Price Cards", url: "", icon: HandCoins,     disabled: true },
-                        { title: "Carts",       url: "", icon: SquareDashed,  disabled: true },
-                        { title: "Forms",       url: "", icon: LetterText,    disabled: true },
-                        { title: "Footers",     url: "", icon: Footprints,    disabled: true },
+                  { title: "Components [Example]", items: [
+                        { title: "Navigation",  url: "", icon: Map,           disabled: false },
+                        { title: "Price Cards", url: "", icon: HandCoins,     disabled: false },
+                        { title: "Carts",       url: "", icon: SquareDashed,  disabled: false },
+                        { title: "Forms",       url: "", icon: LetterText,    disabled: false },
+                        { title: "Footers",     url: "", icon: Footprints,    disabled: false },
                   ] }
             ],
             navItems: [
